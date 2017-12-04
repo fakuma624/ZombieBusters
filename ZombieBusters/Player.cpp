@@ -7,8 +7,8 @@ Player::Player()
 	WindowPos.x = 300;
 	WindowPos.y = 300;
 	/* WorldPos;*/
-	 Width=90.0f;
-	 Hight=180.0f;
+	 Size.Width=90.0f;
+	 Size.Hight=180.0f;
 	 Speed=2.0f;
 }
 
@@ -23,10 +23,10 @@ void Player::Draw()
 		static CUSTOMVERTEX PlayerVertex[4]
 	{
 		//{プレイヤーのX座標 ,    プレイヤーのY座標 ,  1固定,  ?,   カラー    ,tu,tv}
-		{ - Width / 2,- Hight / 2, 1.f,1.f, 0xFFFFFFFF, 0.f, 0.f },
-		{ + Width / 2,- Hight / 2, 1.f,1.f, 0xFFFFFFFF, 1.f, 0.f },
-		{ + Width / 2,+ Hight / 2, 1.f,1.f, 0xFFFFFFFF, 1.f, 1.f },
-		{ - Width / 2,+ Hight / 2, 1.f,1.f, 0xFFFFFFFF, 0.f, 1.f }
+		{ - Size.Width / 2,- Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 0.f, 0.f },
+		{ + Size.Width / 2,- Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 1.f, 0.f },
+		{ + Size.Width / 2,+ Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 1.f, 1.f },
+		{ - Size.Width / 2,+ Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 0.f, 1.f }
 
 	};
 	for (int i = 0; i < 4; ++i)

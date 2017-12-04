@@ -1,18 +1,23 @@
 #pragma once
 #include <d3dx9.h>
 #include "DirectGraphics.h"
+#include "CharaBase.h"
 
-class Zombie
+class Zombie:public CharaBase
 {
+public:
 	Zombie();
 	~Zombie();
 	void Update();
 	void Draw();
-public:
+	TEXTURESIZE* GetSize() { return &Size; }
+	D3DXVECTOR2* GetPos() { return &WindowPos; }
+	int* GetTexture() { return &TextureID; }
+private:
+	int TextureID;
 	D3DXVECTOR2 WindowPos;
 	D3DXVECTOR2 WorldPos;
-	float Width;//âÊëúÇÃïù
-	float Hight;//çÇÇ≥
+	TEXTURESIZE Size;
 	float Speed;
 };
 

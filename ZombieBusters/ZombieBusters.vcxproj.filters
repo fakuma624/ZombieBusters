@@ -8,16 +8,13 @@
     <Filter Include="ソース ファイル\char">
       <UniqueIdentifier>{6c968111-7c43-4b58-89b2-e4e7afe7ab68}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\DirectX">
+      <UniqueIdentifier>{783d6878-a90f-4a16-a5ef-b254a5c24872}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="DirectGraphics.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectInput.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="CollisionJudgment.cpp">
@@ -29,23 +26,37 @@
     <ClCompile Include="Zombie.cpp">
       <Filter>ソース ファイル\char</Filter>
     </ClCompile>
+    <ClCompile Include="CharaBase.cpp">
+      <Filter>ソース ファイル\char</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectGraphics.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectInput.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DirectGraphics.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="DirectInput.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CollisionJudgment.h" />
     <ClInclude Include="Player.h">
       <Filter>ソース ファイル\char</Filter>
     </ClInclude>
     <ClInclude Include="Zombie.h">
       <Filter>ソース ファイル\char</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectGraphics.h">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectInput.h">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="CharaBase.h">
+      <Filter>ソース ファイル\char</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionJudgment.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

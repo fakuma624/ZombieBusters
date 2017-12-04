@@ -3,8 +3,9 @@
 #include <d3d9.h>
 #include "DirectGraphics.h"
 #include "DirectInput.h"
+#include "CharaBase.h"
 
-class Player
+class Player:public CharaBase
 {
 public:
 	Player();
@@ -18,7 +19,8 @@ public:
 		RIGHT,
 		LEFT
 	};
-
+	TEXTURESIZE* GetSize() { return &Size; }
+	D3DXVECTOR2* GetPos() { return &WindowPos; }
 	int* GetTexture() { return &TextureID; }
 private:
 	int TextureID;
@@ -26,8 +28,7 @@ private:
 	//static int Fcount; 
 	D3DXVECTOR2 WindowPos;
 	D3DXVECTOR2 WorldPos;
-	float Width;//âÊëúÇÃïù
-	float Hight;//çÇÇ≥
+	TEXTURESIZE Size;
 	float Speed;
 	KEYSTATE Key[KEYMAX] = { KEY_OFF };
 
