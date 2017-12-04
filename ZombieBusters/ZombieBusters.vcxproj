@@ -123,7 +123,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CharaBase.cpp" />
-    <ClCompile Include="ClearSecene.cpp" />
+    <ClCompile Include="ClearScene.cpp" />
     <ClCompile Include="CollisionJudgment.cpp" />
     <ClCompile Include="DirectGraphics.cpp" />
     <ClCompile Include="DirectInput.cpp" />
@@ -131,23 +131,23 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OverScene.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="SeceneBase.cpp" />
-    <ClCompile Include="Stage1Secen.cpp" />
-    <ClCompile Include="TitleSecene.cpp" />
+    <ClCompile Include="SceneBase.cpp" />
+    <ClCompile Include="Stage1Scene.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="Zombie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CharaBase.h" />
-    <ClInclude Include="ClearSecene.h" />
+    <ClInclude Include="ClearScene.h" />
     <ClInclude Include="CollisionJudgment.h" />
     <ClInclude Include="DirectGraphics.h" />
     <ClInclude Include="DirectInput.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="OverScene.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="SeceneBase.h" />
-    <ClInclude Include="Stage1Secen.h" />
-    <ClInclude Include="TitleSecene.h" />
+    <ClInclude Include="SceneBase.h" />
+    <ClInclude Include="Stage1Scene.h" />
+    <ClInclude Include="TitleScene.h" />
     <ClInclude Include="Zombie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

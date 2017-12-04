@@ -1,7 +1,7 @@
 #pragma once
-#include "SeceneBase.h"
+#include "SceneBase.h"
 class OverScene :
-	public SeceneBase
+	public SceneBase
 {
 public:
 	OverScene();
