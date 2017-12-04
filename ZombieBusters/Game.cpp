@@ -6,6 +6,7 @@ Game::Game()
 {
 	pPlayer = new Player;
 	pZombie = new Zombie;
+	pCollision = new CollisionJudgment;
 }
 
 
@@ -17,6 +18,7 @@ void Game::Update()
 {
 	pPlayer->Update();
 	pZombie->Update();
+	bool Hit = pCollision->RectangleCollosion(GetPlayer()->GetPos(), GetPlayer()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
 }
 
 void Game::Draw()

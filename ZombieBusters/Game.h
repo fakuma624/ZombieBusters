@@ -5,9 +5,9 @@
 #include <d3d9.h>
 #include "Player.h"
 #include "Zombie.h"
+#include "CollisionJudgment.h"
 
-class Player;
-class Zombie;
+
 
 class Game
 {
@@ -23,6 +23,7 @@ private:
 	KEYSTATE Key[KEYMAX] = { KEY_OFF };
 	Player* pPlayer;
 	Zombie* pZombie;
+	CollisionJudgment* pCollision;
 	
 };
 

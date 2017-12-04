@@ -10,8 +10,8 @@ public:
 	~Zombie();
 	void Update();
 	void Draw();
-	TEXTURESIZE* GetSize() { return &Size; }
-	D3DXVECTOR2* GetPos() { return &WindowPos; }
+	TEXTURESIZE GetSize() { return Size; }
+	D3DXVECTOR2 GetPos() { return WindowPos; }
 	int* GetTexture() { return &TextureID; }
 private:
 	int TextureID;

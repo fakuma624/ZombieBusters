@@ -12,8 +12,8 @@ public:
 	~CharaBase();
 	void Update();
 	void Draw();
-	virtual TEXTURESIZE* GetSize() { return &Size; }
-	virtual D3DXVECTOR2* GetPos() { return &WindowPos; }
+	virtual TEXTURESIZE GetSize() { return Size; }
+	virtual D3DXVECTOR2 GetPos() { return WindowPos; }
 	virtual int* GetTexture() { return &TextureID; }
 private:
 	int TextureID;
