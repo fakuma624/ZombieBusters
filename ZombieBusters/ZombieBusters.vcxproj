@@ -132,6 +132,7 @@
     <ClCompile Include="OverScene.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneBase.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Stage1Scene.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="Zombie.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="OverScene.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SceneBase.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Stage1Scene.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="Zombie.h" />

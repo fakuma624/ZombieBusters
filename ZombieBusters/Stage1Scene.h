@@ -9,5 +9,8 @@ public:
 	Stage1Scene();
 	~Stage1Scene();
 	void Draw();
+	int* GetTexture(){ return &TextureID; }
+private:
+	int TextureID;
 };
 

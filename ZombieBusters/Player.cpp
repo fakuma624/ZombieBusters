@@ -4,6 +4,7 @@
 
 Player::Player()
 {
+	DirectGraphics::GetpInstance()->InitGraphics("image\\Player\\purin.png", GetTexture());
 	WindowPos.x = 300;
 	WindowPos.y = 300;
 	/* WorldPos;*/

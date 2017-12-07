@@ -1,10 +1,7 @@
 #pragma once
 #include <d3d9.h>
 #include <d3dx9.h>
-struct TEXTURESIZE {
-	float Width, Hight;
-};
-
+#include "DirectGraphics.h"
 class CharaBase
 {
 public:

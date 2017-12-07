@@ -11,6 +11,10 @@ struct CUSTOMVERTEX
 	DWORD	color;
 	FLOAT	tu, tv;
 };
+struct TEXTURESIZE {
+	float Width, Hight;
+};
+
 
 class DirectGraphics {
 public:

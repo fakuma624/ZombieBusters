@@ -4,6 +4,7 @@
 
 Zombie::Zombie()
 {
+	DirectGraphics::GetpInstance()->InitGraphics("image\\Zombie\\Zombie.png", GetTexture());
 	WindowPos.x = 100;
 	WindowPos.y = 100;
 	Size.Width = 90.0f;

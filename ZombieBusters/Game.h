@@ -6,6 +6,7 @@
 #include "Player.h"
 #include "Zombie.h"
 #include "CollisionJudgment.h"
+#include "SceneManager.h"
 
 
 
@@ -24,6 +25,7 @@ private:
 	Player* pPlayer;
 	Zombie* pZombie;
 	CollisionJudgment* pCollision;
+	SceneManager* pSceneManager;
 	
 };
 

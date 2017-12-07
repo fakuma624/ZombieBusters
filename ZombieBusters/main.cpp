@@ -53,12 +53,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		NULL
 	);
 	if (!hWnd) return 0;
-	Game game;
 	DirectGraphics::CreateInstance(hWnd);
 	DirectInput::CreateDirectInput(hWnd);
-	DirectGraphics::GetpInstance()->InitGraphics("image\\Player\\purin.png", game.GetPlayer()->GetTexture());
-	
-	DirectGraphics::GetpInstance()->InitGraphics("image\\Zombie\\Zombie.png", game.GetZombie()->GetTexture());
+	Game game;
+
+
 	DWORD SyncOld = timeGetTime();	//	ƒVƒXƒeƒ€ŠÔ‚ğæ“¾
 	DWORD SyncNow;
 

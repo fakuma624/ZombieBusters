@@ -1,5 +1,8 @@
 #pragma once
 #include "DirectGraphics.h"
+#define DISPLAY_WIDTH 960
+#define DISPLAY_HIGHT 540
+
 class SceneBase
 {
 public:
