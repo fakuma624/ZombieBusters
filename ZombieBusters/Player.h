@@ -30,6 +30,9 @@ private:
 	D3DXVECTOR2 WorldPos;
 	TEXTURESIZE Size;
 	float Speed;
+	float const tu = 90;
+	float const tv = 180;
+
 	KEYSTATE Key[KEYMAX] = { KEY_OFF };
 
 };

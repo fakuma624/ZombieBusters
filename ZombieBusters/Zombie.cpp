@@ -10,6 +10,10 @@ Zombie::Zombie()
 	Size.Width = 90.0f;
 	Size.Hight = 180.0f;
 	Speed = 2.0f;
+	SpawnPos.x = WindowPos.x;
+	SpawnPos.y = WindowPos.y;
+
+	IsRight = false;
 }
 
 
@@ -39,6 +43,33 @@ void Zombie::Draw()
 }
 void Zombie::Update()
 {
-	
+	Control();
+}
+
+void Zombie::Control()
+{
+	if (IsRight == true)
+	{
+		if (WindowPos.x >= SpawnPos.x + MovingRange)
+		{
+			IsRight = false;
+		}
+	}
+	if (IsRight == false)
+	{
+		if (WindowPos.x <= SpawnPos.x - MovingRange)
+		{
+			IsRight = true;
+		}
+	}
+
+	if (IsRight == false)
+	{
+		WindowPos.x -= Speed;
+	}
+	if (IsRight == true)
+	{
+		WindowPos.x += Speed;
+	}
 }
 
