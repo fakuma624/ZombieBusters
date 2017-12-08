@@ -2,6 +2,15 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #include "DirectGraphics.h"
+
+enum Direction {
+	UNKNOWN,
+	UP,
+	DOWN,
+	RIGHT,
+	LEFT
+};
+
 class CharaBase
 {
 public:
