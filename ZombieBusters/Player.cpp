@@ -4,13 +4,14 @@
 
 Player::Player()
 {
-	DirectGraphics::GetpInstance()->InitGraphics("image\\Player\\purin.png", GetTexture());
+	DirectGraphics::GetpInstance()->InitGraphics("image\\Character\\Character.png", GetTexture());
 	WindowPos.x = 300;
 	WindowPos.y = 300;
 	/* WorldPos;*/
 	 Size.Width=90.0f;
 	 Size.Hight=180.0f;
 	 Speed=2.0f;
+	 Direction = RIGHT;
 }
 
 
@@ -25,9 +26,9 @@ void Player::Draw()
 	{
 		//{プレイヤーのX座標 ,    プレイヤーのY座標 ,  1固定,  ?,   カラー    ,tu,tv}
 		{ - Size.Width / 2,- Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 0.f, 0.f },
-		{ + Size.Width / 2,- Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 1.f, 0.f },
-		{ + Size.Width / 2,+ Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 1.f, 1.f },
-		{ - Size.Width / 2,+ Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 0.f, 1.f }
+		{ + Size.Width / 2,- Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, PlayerTu, 0.f },
+		{ + Size.Width / 2,+ Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, PlayerTu, PlayerTv },
+		{ - Size.Width / 2,+ Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 0.f, PlayerTv }
 
 	};
 	for (int i = 0; i < 4; ++i)
@@ -37,7 +38,41 @@ void Player::Draw()
 		player[i].y += WindowPos.y;
 
 	}
+	static int Fcount = 0;
+	if (Fcount < 30)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			player[i].tu += PlayerTu;
+
+		}
+		
+	}
+	if (Fcount >= 30 && Fcount < 60)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			player[i].tu += PlayerTu*2;
+
+		}
+	}
+	if (Direction == RIGHT)
+	{
+
+	}
+	if (Direction == LEFT)
+	{
+		//反転する関数を呼ぶ
+	}
+	if (Fcount == 60)
+	{
+		Fcount = 0;
+	}
+
+
+
 	DirectGraphics::GetpInstance()->Draw(&TextureID, player);
+	++Fcount;
 }
 void Player::Update()
 {
