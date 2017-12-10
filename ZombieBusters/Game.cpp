@@ -8,6 +8,7 @@ Game::Game()
 	pZombie = new Zombie;
 	pCollision = new CollisionJudgment;
 	pSceneManager = new SceneManager;
+	pBarrett = new Barrett;
 }
 
 
@@ -20,7 +21,8 @@ void Game::Update()
 	pSceneManager->SceneUpdate();
 	pPlayer->Update();
 	pZombie->Update();
-	//bool Hit = pCollision->RectangleCollosion(GetPlayer()->GetPos(), GetPlayer()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
+	//pBarrett->Update();
+	bool Hit = pCollision->RectangleCollosion(GetPlayer()->GetPos(), GetPlayer()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
 }
 
 void Game::Draw()
@@ -29,6 +31,7 @@ void Game::Draw()
 	pSceneManager->SceneDraw();
 	pPlayer->Draw();
 	pZombie->Draw();
+	pBarrett->Draw();
 	DirectGraphics::GetpInstance()->EndRender();
 }
 void Game::Run()

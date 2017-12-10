@@ -7,6 +7,7 @@
 #include "Zombie.h"
 #include "CollisionJudgment.h"
 #include "SceneManager.h"
+#include "Barrett.h"
 
 
 
@@ -26,6 +27,7 @@ private:
 	Zombie* pZombie;
 	CollisionJudgment* pCollision;
 	SceneManager* pSceneManager;
+	Barrett* pBarrett;
 	
 };
 

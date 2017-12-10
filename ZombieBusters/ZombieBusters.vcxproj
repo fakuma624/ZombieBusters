@@ -122,6 +122,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Barrett.cpp" />
     <ClCompile Include="CharaBase.cpp" />
     <ClCompile Include="ClearScene.cpp" />
     <ClCompile Include="CollisionJudgment.cpp" />
@@ -138,6 +139,7 @@
     <ClCompile Include="Zombie.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Barrett.h" />
     <ClInclude Include="CharaBase.h" />
     <ClInclude Include="ClearScene.h" />
     <ClInclude Include="CollisionJudgment.h" />

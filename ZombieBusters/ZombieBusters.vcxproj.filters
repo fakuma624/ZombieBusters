@@ -56,6 +56,9 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Barrett.cpp">
+      <Filter>ソース ファイル\char</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -96,6 +99,9 @@
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Barrett.h">
+      <Filter>ソース ファイル\char</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
