@@ -11,7 +11,7 @@ public:
 	~Barrett();
 	void Update();
 	void Draw();
-	void Control();
+	void Control(D3DVECTOR WindoPos, bool IsRight);
 	int* GetTexture() { return &TextureID; }
 private:
 	int TextureID;

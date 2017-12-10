@@ -40,7 +40,8 @@ void Barrett::Update()
 {
 
 }
-void Barrett::Control()
+void Barrett::Control(D3DVECTOR WindoPos,bool IsRight)
 {
+
 
 }
