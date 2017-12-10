@@ -144,7 +144,7 @@ void Zombie::Animation(CUSTOMVERTEX vertex[])
 			vertex[i].tv += ZombieTv * 2;
 		}
 	}
-	if (FcountMax * 8/9 <= Fcount&&Fcount < FcountMax * 9/9)
+	if (FcountMax * 8/9 <= Fcount&&Fcount <= FcountMax * 9/9)
 	{
 		for (int i = 0; i < 4; ++i)
 		{

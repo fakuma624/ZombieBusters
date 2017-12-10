@@ -11,7 +11,7 @@ Player::Player()
 	 Size.Width=90.0f;
 	 Size.Hight=180.0f;
 	 Speed=2.0f;
-	 Direction = RIGHT;
+	 IsRight = false;
 	 IsAtk = false;
 	 IsMoving = false;
 	 MovementX = 0;
@@ -57,14 +57,15 @@ void Player::Draw()
 
 			}
 		}
-		if (Direction == LEFT)
-		{
 
-		}
-		if (Direction == RIGHT)
+		if (IsRight)
 		{
 			//”½“]‚·‚éŠÖ”‚ðŒÄ‚Ô
 			DirectGraphics::GetpInstance()->InvertedRight(player);
+		}
+		else
+		{
+
 		}
 		if (StayCount == 60)
 		{
@@ -120,16 +121,14 @@ void Player::Draw()
 		}
 		++MoveCount;
 
-		if (Direction == LEFT)
+		if (!IsRight)
 		{
 
 		}
-		if (Direction == RIGHT)
+		if (IsRight)
 		{
 			//”½“]‚·‚éŠÖ”‚ðŒÄ‚Ô
 			DirectGraphics::GetpInstance()->InvertedRight(player);
-
-
 
 
 
@@ -180,11 +179,11 @@ void Player::Control()
 	}
 	if (Key[KEY_LEFT] == KEY_ON) {
 		MovementX = -Speed;
-		Direction = LEFT;
+		IsRight = false;
 	}
 	if (Key[KEY_RIGHT] == KEY_ON) {
 		MovementX = +Speed;
-		Direction = RIGHT;
+		IsRight = true;
 	}
 
 	if (MovementX != 0 || MovementY != 0)

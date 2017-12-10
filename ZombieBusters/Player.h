@@ -25,9 +25,9 @@ private:
 	D3DXVECTOR2 WindowPos;
 	D3DXVECTOR2 WorldPos;
 	TEXTURESIZE Size;
-	Direction Direction;
 	float MovementX;
 	float MovementY;
+	bool IsRight;
 	bool IsAtk;
 	bool IsMoving;
 	const float PlayerTu = 90.f / 1024.f;
