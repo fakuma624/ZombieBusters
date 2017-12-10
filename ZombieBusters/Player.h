@@ -12,6 +12,8 @@ public:
 	~Player();
 	void Update();
 	void Draw();
+	void Move();
+	void Control();
 
 	TEXTURESIZE GetSize() { return Size; }
 	D3DXVECTOR2 GetPos() { return WindowPos; }
@@ -24,6 +26,10 @@ private:
 	D3DXVECTOR2 WorldPos;
 	TEXTURESIZE Size;
 	Direction Direction;
+	float MovementX;
+	float MovementY;
+	bool IsAtk;
+	bool IsMoving;
 	const float PlayerTu = 90.f / 1024.f;
 	const float PlayerTv = 180.f / 2048.f;
 	float Speed;
