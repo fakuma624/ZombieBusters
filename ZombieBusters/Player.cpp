@@ -39,30 +39,23 @@ void Player::Draw()
 
 	}
 	static int Fcount = 0;
-	if (Fcount < 30)
+
+	if (Fcount >= 30 && Fcount < 60)
 	{
 		for (int i = 0; i < 4; ++i)
 		{
 			player[i].tu += PlayerTu;
 
 		}
-		
-	}
-	if (Fcount >= 30 && Fcount < 60)
-	{
-		for (int i = 0; i < 4; ++i)
-		{
-			player[i].tu += PlayerTu*2;
-
-		}
-	}
-	if (Direction == RIGHT)
-	{
-
 	}
 	if (Direction == LEFT)
 	{
+
+	}
+	if (Direction == RIGHT)
+	{
 		//”½“]‚·‚éŠÖ”‚ðŒÄ‚Ô
+		DirectGraphics::GetpInstance()->InvertedRight(player);
 	}
 	if (Fcount == 60)
 	{
@@ -95,8 +88,10 @@ void Player::Update()
 	}
 	if (Key[KEY_LEFT] == KEY_ON) {
 		WindowPos.x -= Speed;
+		Direction = LEFT;
 	}
 	if (Key[KEY_RIGHT] == KEY_ON) {
 		WindowPos.x += Speed;
+		Direction = RIGHT;
 	}
 }

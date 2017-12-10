@@ -23,10 +23,11 @@ private:
 	D3DXVECTOR2 WindowPos;
 	D3DXVECTOR2 WorldPos;
 	TEXTURESIZE Size;
-	float Speed;
 	Direction Direction;
 	const float PlayerTu = 90.f / 1024.f;
 	const float PlayerTv = 180.f / 2048.f;
+	float const tu = 90;
+	float const tv = 180;
 
 	KEYSTATE Key[KEYMAX] = { KEY_OFF };
 

@@ -30,6 +30,7 @@ public:
 	//描画終了関数
 	void EndRender();
 	void InitGraphics(char* filepath, int *texture);
+	void InvertedRight(CUSTOMVERTEX vertex[]);
 	static  DirectGraphics* GetpInstance() { return pInstance; }
 private:
 	//2Dグラフィックス生成
