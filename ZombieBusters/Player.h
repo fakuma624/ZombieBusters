@@ -23,6 +23,7 @@ private:
 	D3DXVECTOR2 WindowPos;
 	D3DXVECTOR2 WorldPos;
 	TEXTURESIZE Size;
+<<<<<<< HEAD
 	float Speed;
 
 	Direction Direction;
@@ -30,6 +31,17 @@ private:
 	const float PlayerTv = 180.f / 2048.f;
 
 
+=======
+	Direction Direction;
+	const float PlayerTu = 90.f / 1024.f;
+	const float PlayerTv = 180.f / 2048.f;
+<<<<<<< HEAD
+	float const tu = 90;
+	float const tv = 180;
+=======
+
+>>>>>>> [#11　enh]ゾンビの歩行アニメーション　左右反転してる
+>>>>>>> master
 
 	KEYSTATE Key[KEYMAX] = { KEY_OFF };
 
