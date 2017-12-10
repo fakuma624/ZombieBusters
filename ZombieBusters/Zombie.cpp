@@ -4,7 +4,7 @@
 
 Zombie::Zombie()
 {
-	DirectGraphics::GetpInstance()->InitGraphics("image\\Zombie\\Zombie.png", GetTexture());
+	DirectGraphics::GetpInstance()->InitGraphics("image\\Character\\Character2.png", GetTexture());
 	WindowPos.x = 100;
 	WindowPos.y = 100;
 	Size.Width = 90.0f;
@@ -25,11 +25,10 @@ void Zombie::Draw()
 	CUSTOMVERTEX Zombie[4];
 	static CUSTOMVERTEX ZombieVertex[4]
 	{
-		//{プレイヤーのX座標 ,    プレイヤーのY座標 ,  1固定,  ?,   カラー    ,tu,tv}
 		{ -Size.Width / 2,-Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 0.f, 0.f },
-		{ +Size.Width / 2,-Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 1.f, 0.f },
-		{ +Size.Width / 2,+Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 1.f, 1.f },
-		{ -Size.Width / 2,+Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 0.f, 1.f }
+		{ +Size.Width / 2,-Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, ZombieTu, 0.f },
+		{ +Size.Width / 2,+Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, ZombieTu, ZombieTv },
+		{ -Size.Width / 2,+Size.Hight / 2, 1.f,1.f, 0xFFFFFFFF, 0.f, ZombieTv }
 
 	};
 	for (int i = 0; i < 4; ++i)
@@ -39,7 +38,10 @@ void Zombie::Draw()
 		Zombie[i].y += WindowPos.y;
 
 	}
+	
+	Animation(Zombie);
 	DirectGraphics::GetpInstance()->Draw(&TextureID, Zombie);
+
 }
 void Zombie::Update()
 {
@@ -71,5 +73,98 @@ void Zombie::Control()
 	{
 		WindowPos.x += Speed;
 	}
+}
+
+void Zombie::Animation(CUSTOMVERTEX vertex[])
+{
+	static int Fcount = 0;
+	static int FcountMax = 100;
+	if (0 <= Fcount&&Fcount <  FcountMax * 1 / 9)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			vertex[i].tu += ZombieTu * 0;
+			vertex[i].tv += ZombieTv * 2;
+		}
+	}
+	if (FcountMax * 1 / 9 <= Fcount&&Fcount < FcountMax * 2 / 9)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			vertex[i].tu += ZombieTu * 1;
+			vertex[i].tv += ZombieTv * 2;
+		}
+	}
+	if (FcountMax * 2 / 9 <= Fcount&&Fcount < FcountMax * 3 / 9)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			vertex[i].tu += ZombieTu * 2;
+			vertex[i].tv += ZombieTv * 2;
+		}
+	}
+	if (FcountMax * 3 / 9 <= Fcount&&Fcount < FcountMax * 4 / 9)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			vertex[i].tu += ZombieTu * 3;
+			vertex[i].tv += ZombieTv * 2;
+		}
+	}
+	if (FcountMax * 4 / 9 <= Fcount&& Fcount < FcountMax * 5 / 9)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			vertex[i].tu += ZombieTu * 4;
+			vertex[i].tv += ZombieTv * 2;
+		}
+	}
+
+	if (FcountMax * 5 / 9 <= Fcount&&Fcount < FcountMax * 6/9)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			vertex[i].tu += ZombieTu * 4;
+			vertex[i].tv += ZombieTv * 2;
+		}
+	}
+	if (FcountMax * 6 / 9 <= Fcount&&Fcount < FcountMax * 7/9)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			vertex[i].tu += ZombieTu * 3;
+			vertex[i].tv += ZombieTv * 2;
+		}
+	}
+	if (FcountMax * 7 / 9 <= Fcount&&Fcount < FcountMax * 8 / 9)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			vertex[i].tu += ZombieTu * 2;
+			vertex[i].tv += ZombieTv * 2;
+		}
+	}
+	if (FcountMax * 8/9 <= Fcount&&Fcount < FcountMax * 9/9)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			vertex[i].tu += ZombieTu * 1;
+			vertex[i].tv += ZombieTv * 2;
+		}
+	}
+	if (IsRight)
+	{
+		DirectGraphics::GetpInstance()->InvertedRight(vertex);
+	}
+	else {
+
+	}
+
+	if (Fcount == FcountMax)
+	{
+		Fcount = 0;
+	}
+	++Fcount;
+	
 }
 

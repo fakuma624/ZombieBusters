@@ -1,18 +1,3 @@
-﻿  Player.cpp
-  c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  DirectGraphics.cpp
-  コードを生成中...
-  スキップ中... (関連する変更は検出されませんでした)
-  main.cpp
-  Zombie.cpp
-  TitleScene.cpp
-  Stage1Scene.cpp
-  SceneManager.cpp
-  SceneBase.cpp
-  OverScene.cpp
-  Game.cpp
-  CollisionJudgment.cpp
-  ClearScene.cpp
-  CharaBase.cpp
+﻿  Zombie.cpp
   ZombieBusters.vcxproj -> D:\git\ZombieBusters\Debug\ZombieBusters.exe
   ZombieBusters.vcxproj -> D:\git\ZombieBusters\Debug\ZombieBusters.pdb (Partial PDB)

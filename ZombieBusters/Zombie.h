@@ -11,6 +11,7 @@ public:
 	void Update();
 	void Draw();
 	void Control();
+	void Animation(CUSTOMVERTEX vertex[]);
 	TEXTURESIZE GetSize() { return Size; }
 	D3DXVECTOR2 GetPos() { return WindowPos; }
 	int* GetTexture() { return &TextureID; }
@@ -22,6 +23,8 @@ private:
 	TEXTURESIZE Size;
 	bool IsRight;
 	float Speed;
+	float ZombieTu = 90.f / 1024.f;
+	float ZombieTv = 180.f / 2048.f;
 	float const MovingRange = 100;//ˆÚ“®”ÍˆÍ
 };
 
