@@ -4,6 +4,7 @@
 #include "DirectGraphics.h"
 #include "DirectInput.h"
 #include "CharaBase.h"
+#include "Bullet.h"
 
 class Player:public CharaBase
 {
@@ -14,12 +15,15 @@ public:
 	void Draw();
 	void Move();
 	void Control();
-
+	Bullet* GetBullet() { return pBullet; }
 	TEXTURESIZE GetSize() { return Size; }
 	D3DXVECTOR2 GetPos() { return WindowPos; }
 	int* GetTexture() { return &TextureID; }
+	int* GetBulletTexture(){return &BulletTexture; }
+	
 private:
 	int TextureID;
+	int BulletTexture;
 	//int PlayerTexture;
 	//static int Fcount; 
 	D3DXVECTOR2 WindowPos;
@@ -35,6 +39,7 @@ private:
 	float Speed;
 	float const tu = 90;
 	float const tv = 180;
+	Bullet* pBullet;
 	KEYSTATE Key[KEYMAX] = { KEY_OFF };
 
 };

@@ -56,7 +56,7 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Barrett.cpp">
+    <ClCompile Include="Bullet.cpp">
       <Filter>ソース ファイル\char</Filter>
     </ClCompile>
   </ItemGroup>
@@ -100,7 +100,7 @@
     <ClInclude Include="SceneManager.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Barrett.h">
+    <ClInclude Include="Bullet.h">
       <Filter>ソース ファイル\char</Filter>
     </ClInclude>
   </ItemGroup>

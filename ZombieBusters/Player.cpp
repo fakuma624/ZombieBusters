@@ -5,6 +5,7 @@
 Player::Player()
 {
 	DirectGraphics::GetpInstance()->InitGraphics("image\\Character\\Character.png", GetTexture());
+	DirectGraphics::GetpInstance()->InitGraphics("image\\‰Š.png", GetBulletTexture());
 	WindowPos.x = 300;
 	WindowPos.y = 300;
 	/* WorldPos;*/
@@ -16,6 +17,7 @@ Player::Player()
 	 IsMoving = false;
 	 MovementX = 0;
 	 MovementY = 0;
+	 pBullet = NULL;
 }
 
 
@@ -152,6 +154,7 @@ void Player::Update()
 	Control();
 	Move();
 
+
 }
 
 void Player::Control()
@@ -202,9 +205,16 @@ void Player::Control()
 	{
 		static int AtkFcount = 0;
 		++AtkFcount;
+		if(AtkFcount==1)
+		{
+			pBullet = new Bullet(BulletTexture,WindowPos,IsRight,Size);
+		}
 		if (AtkFcount == 40)
 		{
+			AtkFcount = 0;
 			IsAtk = false;
+			delete pBullet;
+			pBullet = NULL;
 		}
 	}
 }
@@ -215,3 +225,4 @@ void Player::Move()
 	WindowPos.y += MovementY;
 
 }
+
