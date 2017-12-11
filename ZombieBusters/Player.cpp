@@ -5,7 +5,7 @@
 Player::Player()
 {
 	DirectGraphics::GetpInstance()->InitGraphics("image\\Character\\Character.png", GetTexture());
-	DirectGraphics::GetpInstance()->InitGraphics("image\\‰Š.png", GetBulletTexture());
+	DirectGraphics::GetpInstance()->InitGraphics("image\\Fire\\Fire.png", GetBulletTexture());
 	WindowPos.x = 300;
 	WindowPos.y = 300;
 	/* WorldPos;*/
@@ -153,6 +153,10 @@ void Player::Update()
 {
 	Control();
 	Move();
+	if (pBullet != NULL)
+	{
+		pBullet->Update(BulletTexture, WindowPos, IsRight, Size);
+	}
 
 
 }
@@ -209,7 +213,7 @@ void Player::Control()
 		{
 			pBullet = new Bullet(BulletTexture,WindowPos,IsRight,Size);
 		}
-		if (AtkFcount == 40)
+		if (AtkFcount == 60)
 		{
 			AtkFcount = 0;
 			IsAtk = false;

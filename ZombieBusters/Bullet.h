@@ -10,7 +10,7 @@ public:
 
 	Bullet(int BulletTexture, D3DXVECTOR2 WindoPos, bool IsRight, TEXTURESIZE Size);
 	~Bullet();
-	void Update();
+	void Update(int BulletTexture, D3DXVECTOR2 PlayerWindoPos, bool IsRight, TEXTURESIZE PlayerSize);
 	void Draw();
 
 	int* GetTexture() { return &TextureID; }
@@ -20,8 +20,9 @@ private:
 	D3DXVECTOR2 WorldPos;
 	TEXTURESIZE Size;
 	float Speed;
-	const float BulletTu = 90 / 90;
-	const float BulletTv = 90 / 90;
+	bool IsRight;
+	const float BulletTu = 300.f / 1024.f;
+	const float BulletTv = 90.f / 128.f;
 
 };
 

@@ -20,10 +20,6 @@ void Game::Update()
 	pSceneManager->SceneUpdate();
 	pPlayer->Update();
 	pZombie->Update();
-	if (pPlayer->GetBullet() != NULL)
-	{
-		pPlayer->GetBullet()->Update();
-	}
 	bool Hit = pCollision->RectangleCollosion(GetPlayer()->GetPos(), GetPlayer()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
 }
 

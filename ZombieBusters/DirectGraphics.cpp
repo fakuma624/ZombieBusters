@@ -118,6 +118,7 @@ void DirectGraphics::InitGraphics(char* filepath, int *texture)
 		*texture = pTexture.size();
 		pTexture.push_back(tmp);
 	}
+
 }
 //‰æ‘œ‚ğ¶Œü‚«‚É‚·‚éŠÖ”
 void DirectGraphics::InvertedRight(CUSTOMVERTEX vertex[])
