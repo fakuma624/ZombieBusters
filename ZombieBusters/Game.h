@@ -19,6 +19,7 @@ public:
 	virtual void Draw();
 	virtual void Update();
 	void Run();
+	void HitCalculation();
 	Player* GetPlayer() { return pPlayer; }
 	Zombie* GetZombie() { return pZombie; }
 private:

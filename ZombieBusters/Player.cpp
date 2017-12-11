@@ -8,6 +8,7 @@ Player::Player()
 	DirectGraphics::GetpInstance()->InitGraphics("image\\Fire\\Fire.png", GetBulletTexture());
 	WindowPos.x = 300;
 	WindowPos.y = 300;
+	Hp = 5;
 	/* WorldPos;*/
 	 Size.Width=90.0f;
 	 Size.Hight=180.0f;
@@ -230,3 +231,7 @@ void Player::Move()
 
 }
 
+void Player::SetPlayerHp(int* Atk)
+{
+	Hp -= *Atk;
+}

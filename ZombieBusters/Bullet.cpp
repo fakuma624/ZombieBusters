@@ -6,6 +6,7 @@ Bullet::Bullet(int BulletTexture, D3DXVECTOR2 PlayerWindoPos, bool PlayerIsRight
 	TextureID = BulletTexture;
 	Size.Width = 300;
 	Size.Hight = 90;
+	Atk = 1;
 	//’e‚Ì•\Ž¦ˆÊ’uŽw’è
 	if (PlayerIsRight)
 	{

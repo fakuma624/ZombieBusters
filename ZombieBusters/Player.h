@@ -20,7 +20,8 @@ public:
 	D3DXVECTOR2 GetPos() { return WindowPos; }
 	int* GetTexture() { return &TextureID; }
 	int* GetBulletTexture(){return &BulletTexture; }
-	
+	int* GetPlayerHp() { return &Hp; }
+	void SetPlayerHp(int *Atk);
 private:
 	int TextureID;
 	int BulletTexture;
@@ -29,6 +30,7 @@ private:
 	D3DXVECTOR2 WindowPos;
 	D3DXVECTOR2 WorldPos;
 	TEXTURESIZE Size;
+	int Hp;
 	float MovementX;
 	float MovementY;
 	bool IsRight;

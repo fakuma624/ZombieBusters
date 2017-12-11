@@ -9,6 +9,8 @@ Zombie::Zombie()
 	WindowPos.y = 400;
 	Size.Width = 90.0f;
 	Size.Hight = 180.0f;
+	Hp = 1;
+	Atk = 1;
 	Speed = 2.0f;
 	SpawnPos.x = WindowPos.x;
 	SpawnPos.y = WindowPos.y;
@@ -166,5 +168,10 @@ void Zombie::Animation(CUSTOMVERTEX vertex[])
 	}
 	++Fcount;
 	
+}
+
+void Zombie::SetZombieHp(int* Atk)
+{
+	Hp -= *Atk;
 }
 

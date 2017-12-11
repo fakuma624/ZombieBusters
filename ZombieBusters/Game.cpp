@@ -20,9 +20,9 @@ void Game::Update()
 	pSceneManager->SceneUpdate();
 	pPlayer->Update();
 	pZombie->Update();
-	bool Hit = pCollision->RectangleCollosion(GetPlayer()->GetPos(), GetPlayer()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
-}
+	HitCalculation();
 
+}
 void Game::Draw()
 {
 	DirectGraphics::GetpInstance()->StartRender();
@@ -40,4 +40,25 @@ void Game::Run()
 {
 	Update();
 	Draw();
+}
+
+void Game::HitCalculation()
+{
+	bool PlayerVSZombie = false;
+	bool BulletVSZombie = false;
+	
+	PlayerVSZombie = pCollision->RectangleCollosion(GetPlayer()->GetPos(), GetPlayer()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
+	if (pPlayer->GetBullet() != NULL)
+	{
+		BulletVSZombie = pCollision->RectangleCollosion(GetPlayer()->GetBullet()->GetPos(), GetPlayer()->GetBullet()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
+	}
+	if (PlayerVSZombie)
+	{
+		pPlayer->SetPlayerHp(pZombie->ZombieAtk());
+	}
+	if (BulletVSZombie)
+	{
+		pZombie->SetZombieHp(pPlayer->GetBullet()->BulletAtk());
+	}
+
 }

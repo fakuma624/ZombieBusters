@@ -15,6 +15,9 @@ public:
 	TEXTURESIZE GetSize() { return Size; }
 	D3DXVECTOR2 GetPos() { return WindowPos; }
 	int* GetTexture() { return &TextureID; }
+	int* ZombieHp() { return &Hp; }
+	int* ZombieAtk() { return &Atk; }
+	void SetZombieHp(int* Atk);
 private:
 	int TextureID;
 	D3DXVECTOR2 WindowPos;
@@ -22,6 +25,8 @@ private:
 	D3DXVECTOR2 SpawnPos;//スポーンした座標
 	TEXTURESIZE Size;
 	bool IsRight;
+	int Hp;
+	int Atk;
 	float Speed;
 	float ZombieTu = 90.f / 1024.f;
 	float ZombieTv = 180.f / 2048.f;

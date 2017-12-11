@@ -12,13 +12,16 @@ public:
 	~Bullet();
 	void Update(int BulletTexture, D3DXVECTOR2 PlayerWindoPos, bool IsRight, TEXTURESIZE PlayerSize);
 	void Draw();
-
+	TEXTURESIZE GetSize() { return Size; }
+	D3DXVECTOR2 GetPos() { return WindowPos; }
 	int* GetTexture() { return &TextureID; }
+	int* BulletAtk() { return &Atk; }
 private:
 	int TextureID;
 	D3DXVECTOR2 WindowPos;
 	D3DXVECTOR2 WorldPos;
 	TEXTURESIZE Size;
+	int Atk;
 	float Speed;
 	bool IsRight;
 	const float BulletTu = 300.f / 1024.f;
