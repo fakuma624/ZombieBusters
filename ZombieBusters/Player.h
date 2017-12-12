@@ -15,6 +15,7 @@ public:
 	void Draw();
 	void Move();
 	void Control();
+	bool GetAlive() { return Alive; }
 	Bullet* GetBullet() { return pBullet; }
 	TEXTURESIZE GetSize() { return Size; }
 	D3DXVECTOR2 GetPos() { return WindowPos; }
@@ -22,6 +23,7 @@ public:
 	int* GetBulletTexture(){return &BulletTexture; }
 	int* GetPlayerHp() { return &Hp; }
 	void SetPlayerHp(int *Atk);
+	void LifeOrDeath();
 private:
 	int TextureID;
 	int BulletTexture;
@@ -31,11 +33,14 @@ private:
 	D3DXVECTOR2 WorldPos;
 	TEXTURESIZE Size;
 	int Hp;
+
 	float MovementX;
 	float MovementY;
 	bool IsRight;
 	bool IsAtk;
 	bool IsMoving;
+	bool IsActive;
+	bool Alive;
 	const float PlayerTu = 90.f / 1024.f;
 	const float PlayerTv = 180.f / 2048.f;
 	float Speed;

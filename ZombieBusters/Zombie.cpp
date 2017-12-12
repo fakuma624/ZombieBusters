@@ -7,15 +7,19 @@ Zombie::Zombie()
 	DirectGraphics::GetpInstance()->InitGraphics("image\\Character\\Character2.png", GetTexture());
 	WindowPos.x = 700;
 	WindowPos.y = 400;
+	WorldPos.x = 700;
+	WorldPos.y = 400;
 	Size.Width = 90.0f;
 	Size.Hight = 180.0f;
 	Hp = 1;
 	Atk = 1;
 	Speed = 2.0f;
-	SpawnPos.x = WindowPos.x;
-	SpawnPos.y = WindowPos.y;
-
+	SpawnPos.x = WorldPos.x;
+	SpawnPos.y = WorldPos.y;
+	IsActive = true;
 	IsRight = false;
+	Alive = true;
+	FirstHit = false;
 }
 
 
@@ -42,12 +46,15 @@ void Zombie::Draw()
 	}
 	
 	Animation(Zombie);
-	DirectGraphics::GetpInstance()->Draw(&TextureID, Zombie);
-
+	if (IsActive&&Alive)
+	{
+		DirectGraphics::GetpInstance()->Draw(&TextureID, Zombie);
+	}
 }
 void Zombie::Update()
 {
 	Control();
+	LifeOrDeath();
 }
 
 void Zombie::Control()
@@ -174,4 +181,19 @@ void Zombie::SetZombieHp(int* Atk)
 {
 	Hp -= *Atk;
 }
+void Zombie::LifeOrDeath()
+{
+	if (Hp <= 0)
+	{
+		IsActive = false;
+		Alive = false;
+	}
+}
+void Zombie::SetFirstHit(bool Hit)
+{
+	if (Hit)
+	{
+		FirstHit = true;
+	}
 
+}

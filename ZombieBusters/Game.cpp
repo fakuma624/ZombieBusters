@@ -45,20 +45,52 @@ void Game::Run()
 void Game::HitCalculation()
 {
 	bool PlayerVSZombie = false;
-	bool BulletVSZombie = false;
-	
-	PlayerVSZombie = pCollision->RectangleCollosion(GetPlayer()->GetPos(), GetPlayer()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
-	if (pPlayer->GetBullet() != NULL)
+	bool BulletVSZombie = false; 
+	if (pPlayer->GetAlive() && pZombie->GetAlive())
 	{
-		BulletVSZombie = pCollision->RectangleCollosion(GetPlayer()->GetBullet()->GetPos(), GetPlayer()->GetBullet()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
+		PlayerVSZombie = pCollision->RectangleCollosion(GetPlayer()->GetPos(), GetPlayer()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
 	}
+	if (pZombie->GetAlive())
+	{
+		if (pPlayer->GetBullet() != NULL)
+		{
+			BulletVSZombie = pCollision->RectangleCollosion(GetPlayer()->GetBullet()->GetPos(), GetPlayer()->GetBullet()->GetSize(), GetZombie()->GetPos(), GetZombie()->GetSize());
+		}
+	}
+
+	static int PlayerVSZombieFCount = 0;
+	static int  BulletVSZombieFcount = 0;
+	static int ZombieDethCount = 0;
+
+
+
+
 	if (PlayerVSZombie)
 	{
-		pPlayer->SetPlayerHp(pZombie->ZombieAtk());
+		++PlayerVSZombieFCount;
+		if (PlayerVSZombieFCount == 1)
+		{
+			pPlayer->SetPlayerHp(pZombie->ZombieAtk());
+		}
+
+
+
+	}
+	if (!PlayerVSZombie)
+	{
+		PlayerVSZombieFCount = 0;
 	}
 	if (BulletVSZombie)
 	{
+		++ZombieDethCount;
+			
+	}
+	if (ZombieDethCount > 0)
+	{
+		++ZombieDethCount;
+	}
+	if (ZombieDethCount == 60)
+	{
 		pZombie->SetZombieHp(pPlayer->GetBullet()->BulletAtk());
 	}
-
 }

@@ -11,7 +11,11 @@ public:
 	void Update();
 	void Draw();
 	void Control();
+	void LifeOrDeath();
 	void Animation(CUSTOMVERTEX vertex[]);
+	bool GetAlive() { return Alive; }
+	bool GetFirstHit() { return FirstHit;}
+	void SetFirstHit(bool Hit);
 	TEXTURESIZE GetSize() { return Size; }
 	D3DXVECTOR2 GetPos() { return WindowPos; }
 	int* GetTexture() { return &TextureID; }
@@ -27,6 +31,9 @@ private:
 	bool IsRight;
 	int Hp;
 	int Atk;
+	bool IsActive;
+	bool Alive;
+	bool FirstHit;
 	float Speed;
 	float ZombieTu = 90.f / 1024.f;
 	float ZombieTv = 180.f / 2048.f;

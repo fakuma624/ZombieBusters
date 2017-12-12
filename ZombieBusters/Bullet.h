@@ -24,6 +24,7 @@ private:
 	int Atk;
 	float Speed;
 	bool IsRight;
+
 	const float BulletTu = 300.f / 1024.f;
 	const float BulletTv = 90.f / 128.f;
 

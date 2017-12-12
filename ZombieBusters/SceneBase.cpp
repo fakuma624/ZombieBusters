@@ -14,3 +14,7 @@ void SceneBase::Draw()
 {
 
 }
+void SceneBase::Control()
+{
+
+}
